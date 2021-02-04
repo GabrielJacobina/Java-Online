@@ -37,6 +37,14 @@ public class Celular {
         return IMEI != null ? IMEI.hashCode() : 1;
     }
 
+    @Override
+    public String toString() {
+        return "Celular{" +
+                "nome='" + nome + '\'' +
+                ", IMEI='" + IMEI + '\'' +
+                '}';
+    }
+
     public String getNome() {
         return nome;
     }
