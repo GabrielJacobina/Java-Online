@@ -16,7 +16,6 @@ public class Celular {
     //Consistente x.equals(y) deve sempre retornar o mesmo valor
     // para x diferente de null x.equals(null) tem que retornar false;
 
-
     @Override
     public boolean equals(Object obj) {
         if (obj == null) return false;
@@ -24,6 +23,18 @@ public class Celular {
         if (this.getClass() != obj.getClass()) return false;
         Celular outroCelular = (Celular) obj;
         return IMEI != null && IMEI.equals(outroCelular.getIMEI());
+    }
+
+    // Para hashcode
+    // Se x.equals(y) == true y.hashcode() == x.hashCode();
+    // y.hashcode() == x.hashCode() não necessariamente o equals deverá retornar true
+    // x.equals(y) == false
+    // y.hashcode() != x.hashCode() x.equals(y) deverá ser false
+
+
+    @Override
+    public int hashCode() {
+        return IMEI != null ? IMEI.hashCode() : 1;
     }
 
     public String getNome() {
