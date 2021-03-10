@@ -3,6 +3,8 @@ package br.com.abc.javacore.ZZHlambdas.test;
 import br.com.abc.javacore.ZZHlambdas.classes.Carro;
 import br.com.abc.javacore.ZZHlambdas.interfaces.CarroPredicate;
 
+import java.util.function.Predicate;
+
 public class LambdaTest {
     // anonima      // function     // passada por ai       // concisa
     // (Carro carro) -> carro.getCor().equals("verde");
@@ -16,8 +18,10 @@ public class LambdaTest {
             }
         };
         CarroPredicate carroPredicate2 = (Carro carro) -> carro.getCor().equals("verde");
+        Predicate<Carro> carroPredicate3 = (Carro carro) -> carro.getCor().equals("verde");
         System.out.println(carroPredicate.test(new Carro("verde", 2012)));
         System.out.println(carroPredicate2.test(new Carro("verde", 2012)));
+        System.out.println(carroPredicate3.test(new Carro("verde", 2012)));
 
         Runnable runnable = () -> System.out.println("Dentro do run");
 //        runnable.run();
